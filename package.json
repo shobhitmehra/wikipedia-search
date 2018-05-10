@@ -1,0 +1,33 @@
+{
+  "name": "moviedbwebhook",
+  "version": "1.0.0",
+  "description": "movie webhook",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "no"
+  },
+  "keywords": [
+        "Movie",
+        "api",
+        "shobhitmehra",
+        "Chatfuel",
+        "facebook",
+        "Facebook",
+        "Messenger"
+    ],
+  "author": "Shobhit Mehra",
+  "license": "UNLICENSED"
+}
