@@ -12,9 +12,6 @@
     "express": "^4.16.3"
   },
   "devDependencies": {},
-  "scripts": {
-    "test": "test"
-  },
   "repository": {
     "type": "git",
     "url": "no"
