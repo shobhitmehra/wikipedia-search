@@ -16,10 +16,10 @@ server.use(bodyParser.json());
 
 server.post('/get-movie-details', (req, res) => {
 
-    const movieToSearch = req.body.result && req.body.result.parameters && req.body.result.parameters.movie ? req.body.result.parameters.movie : 'The Godfather';
-    const reqUrl = encodeURI('http://www.omdbapi.com/?t=${movieToSearch}&apikey=${API_KEY}');
+    var movieToSearch = req.body.result && req.body.result.parameters && req.body.result.parameters.movie ? req.body.result.parameters.movie : 'The Godfather';
+    var reqUrl = encodeURI('http://www.omdbapi.com/?t=${movieToSearch}&apikey=${API_KEY}');
     http.get(reqUrl, (responseFromAPI) => {
-        let completeResponse = '';
+        var completeResponse = '';
         responseFromAPI.on('data', (chunk) => {
             completeResponse += chunk;
         });
