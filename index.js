@@ -1,12 +1,12 @@
-const API_KEY = '8040a1d3';
+var API_KEY = '8040a1d3';
 module.exports = API_KEY;
 
-const express = require('express');
-const bodyParser = require('body-parser');
-const http = require('http');
+var express = require('express');
+var bodyParser = require('body-parser');
+var http = require('http');
 //const API_KEY = require('./apiKey');
 
-const server = express();
+var server = express();
 server.use(bodyParser.urlencoded({
     extended: true
 }));
