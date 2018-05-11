@@ -24,12 +24,12 @@ server.post('/get-movie-details', (req, res) => {
             completeResponse += chunk;
         });
         responseFromAPI.on('end', () => {
-            var movie = completeResponse;
+            var movie = JSON.parse(completeResponse);
 		
             // var dataToSend = movieToSearch === 'The Godfather' ? `I don't have the required info on that. Here's some info on 'The Godfather' instead.\n` : '';
            
 			//let dataToSend = movie.Title;
-		   var dataToSend =movie.Title;
+		   var dataToSend ="makasakinaka";
 
 			
 
