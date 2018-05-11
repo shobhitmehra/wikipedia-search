@@ -28,7 +28,7 @@ server.post('/get-movie-details', (req, res) => {
             // var dataToSend = movieToSearch === 'The Godfather' ? `I don't have the required info on that. Here's some info on 'The Godfather' instead.\n` : '';
            
 			//let dataToSend = movie.Title;
-		   var dataToSend = movie.Title +`is a ${movie.Actors} starer ${movie.Genre} movie, released in ${movie.Year}. It was directed by ${movie.Director}`;
+		   var dataToSend = {movie.Title} ;
 
 			
 
