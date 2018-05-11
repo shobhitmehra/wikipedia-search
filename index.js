@@ -1,5 +1,5 @@
-var API_KEY = '8040a1d3';
-module.exports = API_KEY;
+var API_KEY = "8040a1d3";
+//module.exports = API_KEY;
 
 var express = require('express');
 var bodyParser = require('body-parser');
