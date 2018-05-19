@@ -30,10 +30,10 @@ var reqUrl = encodeURI(`https://en.wikipedia.org/w/api.php?action=query&list=sea
         responseFromAPI.on('end', () => {
             var movie = JSON.parse(completeResponse);
 		
-		let dataToSend =JSON.stringify(movie);
+		//let dataToSend =JSON.stringify(movie);
 		
           // let dataToSend = movieToSearch === 'The Godfather' ? `I don't have the required info on that. Here's some info on 'The Godfather' instead.\n` : '';
-          //  dataToSend += `${movie.search[0].title} is a ${movie.Actors} starer ${movie.Genre} movie, released in ${movie.Year}. It was directed by ${movie.Director}`;
+          let dataToSend  = `${movie.query.search[0].snippet}`;
 
 			
 
