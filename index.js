@@ -14,10 +14,14 @@ server.use(bodyParser.urlencoded({
 server.use(bodyParser.json());
 
 
-server.post('/get-movie-details', (req, res) => {
+server.post('/', (req, res) => {
 
     var movieToSearch = req.body.result && req.body.result.parameters && req.body.result.parameters.movie ? req.body.result.parameters.movie : 'The Godfather';
-    var reqUrl = encodeURI(`http://www.omdbapi.com/?t=${movieToSearch}&apikey=${API_KEY}`);
+    
+//	https://en.wikipedia.org/w/api.php?action=query&list=search&srsearch=salman%20khan&prop=info&inprop=url&utf8=&format=json
+var reqUrl = encodeURI(`https://en.wikipedia.org/w/api.php?action=query&list=search&srsearch=${movieToSearch}&prop=info&inprop=url&utf8=&format=json`);	
+
+//var reqUrl = encodeURI(`http://www.omdbapi.com/?t=${movieToSearch}&apikey=${API_KEY}`);
     http.get(reqUrl, (responseFromAPI) => {
         var completeResponse = '';
         responseFromAPI.on('data', (chunk) => {
@@ -27,21 +31,21 @@ server.post('/get-movie-details', (req, res) => {
             var movie = JSON.parse(completeResponse);
 		
            let dataToSend = movieToSearch === 'The Godfather' ? `I don't have the required info on that. Here's some info on 'The Godfather' instead.\n` : '';
-            dataToSend += `${movie.Title} is a ${movie.Actors} starer ${movie.Genre} movie, released in ${movie.Year}. It was directed by ${movie.Director}`;
+            dataToSend += `${movie.search[0].title} is a ${movie.Actors} starer ${movie.Genre} movie, released in ${movie.Year}. It was directed by ${movie.Director}`;
 
 			
 
             return res.json({
                 speech: dataToSend,
                 displayText: dataToSend,
-                source: 'get-movie-details'
+                source: 'get-details'
             });
         });
     }, (error) => {
         return res.json({
             speech: 'Something went wrong!',
             displayText: 'Something went wrong!',
-            source: 'get-movie-details'
+            source: 'get-details'
         });
     });
 });
