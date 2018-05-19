@@ -29,11 +29,11 @@ var reqUrl = encodeURI(`https://en.wikipedia.org/w/api.php?action=query&list=sea
         });
         responseFromAPI.on('end', () => {
             var movie = JSON.parse(completeResponse);
-		
+		var abc=`${movie.query.search[0].snippet}`
 		//let dataToSend =JSON.stringify(movie);
-		
+		abc= abc.replace(/<[^>]*>/g, '');
           // let dataToSend = movieToSearch === 'The Godfather' ? `I don't have the required info on that. Here's some info on 'The Godfather' instead.\n` : '';
-          let dataToSend  = `${movie.query.search[0].snippet}`;
+          let dataToSend  = abc;
 
 			
 
