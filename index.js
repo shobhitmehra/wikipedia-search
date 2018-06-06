@@ -34,7 +34,7 @@ var reqUrl = encodeURI(`https://en.wikipedia.org/w/api.php?action=query&list=sea
 		abc= abc.replace(/<[^>]*>/g, '');
           // let dataToSend = movieToSearch === 'The Godfather' ? `I don't have the required info on that. Here's some info on 'The Godfather' instead.\n` : '';
           let dataToSend  = abc;
-		dataToSend+=`. \r\n  Let me know if you want to ask a question or want to hear some jokes `
+		dataToSend+=`.  .  .  . \r\n \r\n\r\n Let me know if you want to ask a question or want to hear some jokes `
 
 			
 
